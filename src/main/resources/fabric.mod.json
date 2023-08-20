@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "saebyns_first_mod",
+	"version": "${version}",
+	"name": "Saebyn's First Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "TODO: Add license here",
+	"icon": "assets/saebyns-first-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "info.saebyn.minecraft.fabric.firstmod.SaebynsFirstMod",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "info.saebyn.minecraft.fabric.firstmod.SaebynsFirstModClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "info.saebyn.minecraft.fabric.firstmod.SaebynsFirstDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"saebyns-first-mod.mixins.json",
+		{
+			"config": "saebyns-first-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.0"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

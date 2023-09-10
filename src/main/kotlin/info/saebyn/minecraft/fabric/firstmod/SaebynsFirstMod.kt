@@ -15,20 +15,17 @@ import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
 
 object SaebynsFirstMod : ModInitializer {
-    private val logger = LoggerFactory.getLogger("saebyns-first-mod")
+  private val logger = LoggerFactory.getLogger("saebyns-first-mod")
 
 	const val MOD_ID = "saebyns_first_mod"
 
-	lateinit var SPARKLE: DefaultParticleType
-
+	val SPARKLE: DefaultParticleType = FabricParticleTypes.simple()
 
 	override fun onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		logger.info("Hello Fabric world!")
-
-		SPARKLE = FabricParticleTypes.simple()
 
 		Registry.register(Registries.PARTICLE_TYPE, Identifier(MOD_ID, "sparkles"), SPARKLE)
 

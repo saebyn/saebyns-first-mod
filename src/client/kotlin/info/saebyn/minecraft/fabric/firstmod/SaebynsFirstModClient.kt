@@ -1,6 +1,7 @@
 package info.saebyn.minecraft.fabric.firstmod
 
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientChunkEvents
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry
 
 
@@ -15,5 +16,21 @@ class SaebynsFirstModClient : ClientModInitializer {
             SparkleParticle::Factory
         )
 
+        // register ClientChunkEvents.CHUNK_LOAD
+        ClientChunkEvents.CHUNK_LOAD.register { _, worldChunk ->
+            // Spawn sparkle particle at 0,0,0
+            worldChunk.world.addParticle(
+                SaebynsFirstMod.SPARKLE,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
+        }
+
     }
+
+
 }

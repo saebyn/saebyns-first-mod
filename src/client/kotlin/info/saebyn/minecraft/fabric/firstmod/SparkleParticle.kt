@@ -19,7 +19,6 @@ class SparkleParticle {
             velocityY: Double,
             velocityZ: Double
         ): Particle? {
-            println("SparkleParticleFactory.createParticle")
             return super.createParticle(parameters, world, x, y, z, velocityX, velocityY, velocityZ)
         }
     }

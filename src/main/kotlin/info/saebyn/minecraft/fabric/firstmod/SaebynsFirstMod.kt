@@ -3,8 +3,12 @@ package info.saebyn.minecraft.fabric.firstmod
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents.ModifyEntries
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes
+import net.minecraft.item.ItemGroups
 import net.minecraft.particle.DefaultParticleType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
@@ -15,12 +19,13 @@ import net.minecraft.text.TextContent
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
 
+
 object SaebynsFirstMod : ModInitializer {
     private val logger = LoggerFactory.getLogger("saebyns-first-mod")
 
     const val MOD_ID = "saebyns_first_mod"
 
-    val SPARKLE: DefaultParticleType = FabricParticleTypes.simple()
+    val SPARKLE: DefaultParticleType = FabricParticleTypes.simple(true)
 
     val SPARKLEWAND_ITEM = SparkleWandItem(FabricItemSettings().maxCount(1))
 
@@ -53,6 +58,13 @@ object SaebynsFirstMod : ModInitializer {
                     }
             )
         })
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+            .register(ModifyEntries { content: FabricItemGroupEntries ->
+                content.add(
+                    SPARKLEWAND_ITEM
+                )
+            })
     }
 
     private fun spawnParticlesForPlayer(player: ServerPlayerEntity) {

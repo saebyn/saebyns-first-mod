@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory
 
 
 object SaebynsFirstMod : ModInitializer {
-    private val logger = LoggerFactory.getLogger("saebyns-first-mod")
+    private val logger = LoggerFactory.getLogger("saebyns_first_mod")
 
     const val MOD_ID = "saebyns_first_mod"
 

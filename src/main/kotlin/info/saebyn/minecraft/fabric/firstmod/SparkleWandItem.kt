@@ -9,7 +9,7 @@ import net.minecraft.world.World
 import org.slf4j.LoggerFactory
 
 class SparkleWandItem(settings: Settings?) : Item(settings) {
-    private val logger = LoggerFactory.getLogger("saebyns-first-mod")
+    private val logger = LoggerFactory.getLogger("saebyns_first_mod")
 
     private val particleVelocity = 0.5
     private val baseNumberOfParticles = 5

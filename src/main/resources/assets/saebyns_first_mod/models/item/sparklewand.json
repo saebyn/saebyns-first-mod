@@ -1,90 +1,27 @@
 {
-  "credit": "Made with Blockbench",
-  "textures": {
-    "0": "saebyns_first_mod:sparklewand",
-    "particle": "saebyns_first_mod:sparklewand"
-  },
-  "elements": [
-    {
-      "from": [
-        8,
-        5.2,
-        9
-      ],
-      "to": [
-        9,
-        16.2,
-        10
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "x",
-        "origin": [
-          8.5,
-          1.7,
-          8.5
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            2,
-            0,
-            3,
-            11
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "east": {
-          "uv": [
-            1,
-            0,
-            2,
-            11
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            1,
-            11
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "west": {
-          "uv": [
-            3,
-            0,
-            4,
-            11
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "up": {
-          "uv": [
-            5,
-            1,
-            4,
-            2
-          ],
-          "texture": "#0"
-        },
-        "down": {
-          "uv": [
-            5,
-            1,
-            4,
-            0
-          ],
-          "texture": "#0"
-        }
-      }
-    }
-  ]
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "saebyns_first_mod:item/sparklewand",
+		"particle": "saebyns_first_mod:item/sparklewand"
+	},
+	"elements": [
+		{
+			"from": [8, 1.2, 9],
+			"to": [9, 12.2, 10],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8.5, 1.7, 8.5]},
+			"faces": {
+				"north": {"uv": [2, 0, 3, 11], "texture": "#0"},
+				"east": {"uv": [3, 0, 4, 11], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 11], "texture": "#0"},
+				"west": {"uv": [1, 0, 2, 11], "texture": "#0"},
+				"up": {"uv": [5, 1, 4, 0], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [5, 1, 4, 2], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 5.25, 0]
+		}
+	}
 }
